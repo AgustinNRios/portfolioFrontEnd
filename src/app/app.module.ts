@@ -10,6 +10,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { HardAndSoftSkillsComponent } from './components/hard-and-soft-skills/hard-and-soft-skills.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HardAndSoftSkillsComponent } from './components/hard-and-soft-skills/ha
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

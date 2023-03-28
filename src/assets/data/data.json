@@ -1,0 +1,82 @@
+{
+    "name": "Agustin Rios",
+    "bannerUno": "/src/assets/img/banner1.png",
+    "bannerDos": "/src/assets/img/banner1.png",
+    "bannerTres": "/src/assets/img/banner1.png",
+
+    "acercaDeMi": "",
+
+    "educación": [
+        {
+            "img": "/assets/img/ic-fader.jpg",
+            "institucion": "Fernando Fader",
+            "título": "Técnico en Diseño y Comunicación Publicitaria (completo)",
+            "periodo": "2014-2019"
+        },
+        {
+            "img": "/assets/img/ic.utn.jpg",
+            "institucion": "Universidad Tecnológica Nacional",
+            "descrEnLaInstitucion": "Ingeniería Mecánica ( 1 año y medio )",
+            "periodo": "2020-2021"
+        },
+        {
+            "img": "/assets/img/ic.utn.jpg",
+            "institucion": "Universidad Tecnológica Nacional",
+            "descrEnLaInstitucion": "Ingeniería En sistemas ( 1 año y medio )",
+            "periodo": "2022"
+        }
+    ],
+
+    "experiencia": [
+        {
+            "empresa": "",
+            "cargo": "",
+            "infoAdicional": ""
+        },
+        {
+            "empresa": "",
+            "cargo": "",
+            "infoAdicional": ""
+        },
+        {
+            "empresa": "",
+            "cargo": "",
+            "infoAdicional": ""
+        }
+        
+    ],
+    "hardYSoftSkills": [
+        {
+            "area": "Backend",
+            "nombre": "Java",
+            "nivel": "Medio",
+            "categoria": "Lenguaje"
+        },
+        {
+            "area": "Frontend",
+            "nombre": "Angular",
+            "nivel": "Medio",
+            "categoria": "Framework"
+        },
+        {
+            "area": "Data Base",
+            "nombre": "MySQL",
+            "nivel": "Medio",
+            "categoria": "SGBD"
+        },
+        {
+            "area": "Diseño",
+            "nombre": "Adobe Ilustrator",
+            "nivel": "Alto",
+            "categoria": "Aplicacion"
+        }
+    ],
+    "proyectos": [
+        {
+            "titulo": "",
+            "descrProyecto": "",
+            "categoria": ""
+        }
+    ]
+
+}
