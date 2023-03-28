@@ -1,8 +1,8 @@
 {
     "name": "Agustin Rios",
-    "bannerUno": "/src/assets/img/banner1.png",
-    "bannerDos": "/src/assets/img/banner1.png",
-    "bannerTres": "/src/assets/img/banner1.png",
+    "bannerUno": "/assets/img/banner2.png",
+    "bannerDos": "/assets/img/banner1.png",
+    "bannerTres": "/assets/img/banner2.png",
 
     "acercaDeMi": "",
 
@@ -29,16 +29,19 @@
 
     "experiencia": [
         {
+            "img": "/assets/img/banner1.png",
             "empresa": "",
             "cargo": "",
             "infoAdicional": ""
         },
         {
+            "img": "/assets/img/banner1.png",
             "empresa": "",
             "cargo": "",
             "infoAdicional": ""
         },
         {
+            "img": "/assets/img/banner1.png",
             "empresa": "",
             "cargo": "",
             "infoAdicional": ""

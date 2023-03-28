@@ -14,53 +14,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row" rowspan="">Backend</th>
-            <td><img src="" alt="">java</td>
-            <td>medio</td>
-            <td>lenguajes</td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td><img src="" alt="">spring boot</td>
-            <td>medio</td>
-            <td>framework</td>
-          </tr>
-          <tr>
-            <th scope="row">Frontend</th>
-            <td colspan="1"><img src="" alt="">Angular</td>
-            <td>medio</td>
-            <td>framework</td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td colspan="1"><img src="" alt="">Bootstrap</td>
-            <td>medio</td>
-            <td>framework</td>
-          </tr>
-          <tr>
-            <th scope="row">Data base</th>
-            <td colspan="1"><img src="" alt="">mySQL</td>
-            <td>medio</td>
-            <td>SGBD</td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td colspan="1"><img src="" alt="">maria DB</td>
-            <td>medio</td>
-            <td>SGBD</td>
-          </tr>
-          <tr>
-            <th scope="row">Diseño</th>
-            <td colspan="1"><img src="" alt="">Adobe Ilustrator</td>
-            <td>avanzado</td>
-            <td>aplicacion</td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td colspan="1"><img src="" alt="">Adobe Photoshop</td>
-            <td>avanzado</td>
-            <td>aplicacion</td>
+          <tr *ngFor="let skill of skillList">
+            <th scope="row" rowspan="">{{skill.area}}</th>
+            <td><img [src]="skillList.img" alt="">{{skill.nombre}}</td>
+            <td>{{skill.nivel}}</td>
+            <td>{{skill.categoria}}</td>
           </tr>
         </tbody>
       </table>
