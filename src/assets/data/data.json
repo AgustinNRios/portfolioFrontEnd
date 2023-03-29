@@ -51,24 +51,28 @@
     "hardYSoftSkills": [
         {
             "area": "Backend",
+            "img": "",
             "nombre": "Java",
             "nivel": "Medio",
             "categoria": "Lenguaje"
         },
         {
             "area": "Frontend",
+            "img": "",
             "nombre": "Angular",
             "nivel": "Medio",
             "categoria": "Framework"
         },
         {
             "area": "Data Base",
+            "img": "",
             "nombre": "MySQL",
             "nivel": "Medio",
             "categoria": "SGBD"
         },
         {
             "area": "Diseño",
+            "img": "",
             "nombre": "Adobe Ilustrator",
             "nivel": "Alto",
             "categoria": "Aplicacion"

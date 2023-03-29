@@ -11,6 +11,8 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { HardAndSoftSkillsComponent } from './components/hard-and-soft-skills/hard-and-soft-skills.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     EducacionComponent,
     ProyectosComponent,
     ExperienciaComponent,
-    HardAndSoftSkillsComponent
+    HardAndSoftSkillsComponent,
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
