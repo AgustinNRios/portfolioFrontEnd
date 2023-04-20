@@ -13,6 +13,8 @@
       <div class="col">
         <div class="card-group ">
 
+
+
           <div *ngFor ="let educacion of educaciones" class="card rounded-5 border-0 mb-3 mx-3 mt-0"><!--*ngIf = "educaciones.length > 0 "-->
             <img [src]="educacion.img" class="card-img-top rounded-5" alt="..."><!--"/assets/img/ic-fader.jpg"-->
             <div class="card-body">
@@ -23,9 +25,16 @@
             </div>
           </div>
 
+
+
           <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
             <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
             <div class="card-body">
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">nombre imagen</span>
+                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">institución:</span>
@@ -38,9 +47,59 @@
               </div>
 
               <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">descripcion:</span>
+                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              
+              <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">periodo:</span>
                 <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
               </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">estado:</span>
+                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              
+            </div>
+          </div>
+
+
+
+          <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
+            <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
+            <div class="card-body">
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">nombre imagen</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">institución:</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Titulo:</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">descripcion:</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">periodo:</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">estado:</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              
             </div>
           </div>
 
