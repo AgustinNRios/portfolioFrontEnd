@@ -6,14 +6,14 @@
 
         <form class="bg-light rounded-5 px-3 py-3 my-4">
           <div class="mb-3 ">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="form-label" >Email address</label>
+            <input formControlName="email" type="email" class="form-control border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control border-dark" id="exampleInputPassword1">
+            <input formControlName="password" type="password" class="form-control border-dark" id="exampleInputPassword1">
           </div>
-          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+          <button type="submit" value="Enviar" class="btn btn-primary">enviar</button>
         </form>
 
       </div>
