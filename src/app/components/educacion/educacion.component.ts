@@ -17,11 +17,28 @@ export class EducacionComponent  implements OnInit{
   ) { }
 
   ngOnInit(): void {
-    this.portfolioService.getEducacion()
-      .subscribe(data => {
+    this.cargarEducacion()
+  }
+
+  cargarEducacion(): void{
+    this.portfolioService.getEducacion().subscribe(
+      data =>{
         this.educaciones = data;
-      });
-      this.isLoged = this.portfolioService.isLoged();
+      }
+    )
+    this.isLoged = this.portfolioService.isLoged();
+  }
+
+  delete(id?: number){
+    if( id != undefined){
+      this.portfolioService.deleteEducacion(id).subscribe(
+        data => {    this.cargarEducacion()
+        }, err => {
+          alert("No se pudo eliminar");
+        }
+      )
+    }
+
   }
   
 }

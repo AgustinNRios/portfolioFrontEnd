@@ -22,6 +22,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { EditAndNewComponent } from './components/edit-and-new/edit-and-new.component';
+import { NewComponent } from './components/new/new.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { EditAndNewComponent } from './components/edit-and-new/edit-and-new.comp
     HardAndSoftSkillsComponent,
     LoginComponent,
     FooterComponent,
-    EditAndNewComponent
+    EditAndNewComponent,
+    NewComponent
   ],
   imports: [
     FormsModule,//agregado cx

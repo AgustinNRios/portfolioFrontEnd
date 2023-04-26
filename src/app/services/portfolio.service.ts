@@ -34,7 +34,7 @@ export class PortfolioService{
   ///////////////////      CRUD Educación       /////////////////////////////
 
   addEducacion(educacion:Educacion): Observable<Educacion>{
-    return this.http.post<Educacion>(`http://localhost:8080/educacion/ver`, educacion)
+    return this.http.post<Educacion>(`http://localhost:8080/educacion/new`, educacion)
   }
 
   getEducacion(): Observable<Educacion[]>{

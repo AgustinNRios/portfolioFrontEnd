@@ -1,0 +1,53 @@
+<div class="container bg-primary my-4 rounded-5">
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-7 border-light my-3">
+          <h1 class="align-middle fw-bold d-inline text-white text-center py-0">  New  </h1>
+        </div>
+        <div class="col-1"></div>
+      </div>
+ 
+      <form (ngSubmit)="onCreate()">
+
+        <div class="card rounded-5 border-0 mb-0 mx-3 mt-0">
+          <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
+          <div class="card-body my-0">
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">img:</span>
+              <input type="text" class="form-control" id="imgEId" name="imgE" [(ngModel)]="img">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">institución:</span>
+              <input type="text" class="form-control" id="institucionEId" name="institucionE" [(ngModel)]="institucion">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Titulo:</span>
+              <input type="text" class="form-control" id="tituloEId" name="tituloE" [(ngModel)]="titulo">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">descripcion:</span>
+              <input type="text" class="form-control" id="descripcionEId" name="descripcionE" [(ngModel)]="descripcion">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">estado:</span>
+              <input type="text" class="form-control" id="estadoEId" name="estadoE" [(ngModel)]="estado">
+            </div>
+          
+          
+          </div>
+
+          <button type="submit" class="btn btn-dark mb-3 mx-5">
+            Editar educacion
+          </button>
+
+        </div>
+
+      </form>
+      
+</div>
