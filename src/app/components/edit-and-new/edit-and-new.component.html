@@ -1,0 +1,95 @@
+<!--
+<div class="container bg-primary my-4 rounded-5">
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-7 border-light my-3">
+          <h1 class="align-middle fw-bold d-inline text-white text-center py-0">Edit And New  </h1>
+          <button class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="Login" type="submit">    +    </button>
+        </div>
+        <div class="col-1"></div>
+      </div>
+ 
+      <form (ngSubmit)="onUpdate()">
+
+        <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
+          <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
+          <div class="card-body">
+  
+            <div class="form-group">
+              <span class="input-group-text" id="basic-addon1" for="imagenE">nombre imagen</span>
+              <input type="text" class="form-control" id="imagenEId" name="imagenE" [(ngModel)]="educacion.img" required>
+            </div>
+
+            
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">institución:</span>
+              <input type="text" class="form-control" id="institucionEId" name="institucionE" [(ngModel)]="educacion.institucion"
+              placeholder="E.T.N°6 Fernando Fader" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Titulo:</span>
+              <input type="text" class="form-control" id="tituloEId" name="tituloE" [(ngModel)]="educacion.titulo"
+              placeholder="Técnico en Diseño y Comunicación Publicitaria" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">descripcion:</span>
+              <input type="text" class="form-control" id="descripcionEId" name="descripcionE" [(ngModel)]="educacion.descripcion"
+              placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+  
+            <div class="form-group">
+              <span class="input-group-text" id="basic-addon1">estado:</span>
+              <input type="text" class="form-control" id="estadoEId" name="estadoE" [(ngModel)]="educacion.estado" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
+            </div> 
+          
+          
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Editar educacion
+          </button>
+
+        </div>
+
+      </form>
+      
+</div>
+
+-->
+
+<div class="container" *ngIf="educacion">
+  <div class="row">
+      <div>
+          <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+              <div class="form-group">
+                  <label for="imgE">Nombre de la institucion</label>
+                  <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacion.img" required>
+              </div>
+              <div class="form-group">
+                  <label for="institucionE">Descripcion de sus estudios</label>
+                  <input type="text" class="form-control" id="institucionE" name="institucionE" [(ngModel)]="educacion.institucion" required>
+              </div>
+              <div class="form-group">
+                <label for="tituloE">Descripcion de sus estudios</label>
+                <input type="text" class="form-control" id="tituloE" name="tituloE" [(ngModel)]="educacion.titulo" required>
+            </div>
+            <div class="form-group">
+              <label for="estadoE">Descripcion de sus estudios</label>
+              <input type="text" class="form-control" id="estadoE" name="estadoE" [(ngModel)]="educacion.estado" required>
+            </div>
+            <div class="form-group">
+              <label for="descripcionE">Descripcion de sus estudios</label>
+              <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="educacion.descripcion" required>
+            </div>
+              <button class="btn btn-primary">
+                  Editar educacion
+              </button>
+          </form>
+      </div>
+  </div>
+</div>
+

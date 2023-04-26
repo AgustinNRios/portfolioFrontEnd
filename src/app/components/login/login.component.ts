@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,11 +11,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  
-  
+
   formLogin: FormGroup;
+  isLoged: boolean=false;
 
   constructor(
+    private portfolioService: PortfolioService,
     private userService: UserService,
     private router: Router,
   ) {
@@ -24,26 +26,19 @@ export class LoginComponent implements OnInit{
     })
   }
 
+//15.2
+
   onSubmit() {
     this.userService.login(this.formLogin.value)
-      .then(response => {
+      .then( response=> {
         console.log(response);
+        sessionStorage.setItem("tokenKey", "true");
+        this.isLoged = this.portfolioService.isLoged();
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
-  
-  /*
-  form:FormGroup;
-  constructor (private formBuilder:FormBuilder){
-    this.form=this.formBuilder.group(
-      {
-        
-      }
-    )
-  }
-  */
+ 
   ngOnInit(): void {
-
   }
 
 }

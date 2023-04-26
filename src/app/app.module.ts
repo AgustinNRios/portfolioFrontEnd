@@ -15,9 +15,13 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+//import { AngularFireModule } from '@angular/fire';
+//import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environment/environment';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { EditAndNewComponent } from './components/edit-and-new/edit-and-new.component';
 
 
 @NgModule({
@@ -31,15 +35,17 @@ import { environment } from '../environment/environment';
     ExperienciaComponent,
     HardAndSoftSkillsComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    EditAndNewComponent
   ],
   imports: [
+    FormsModule,//agregado cx
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

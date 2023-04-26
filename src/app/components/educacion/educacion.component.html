@@ -4,7 +4,7 @@
       <div class="col-4"></div>
       <div class="col-7 border-light my-3">
         <h1 class="align-middle fw-bold d-inline text-white text-center py-0">Educación   </h1>
-        <button class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="Login" type="submit">    +    </button>
+        <button  *ngIf ="isLoged==true"class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="/EditAndNew" type="submit">    +    </button>
       </div>
       <div class="col-1"></div>
     </div>
@@ -22,51 +22,16 @@
               <p class="card-text">{{educacion.titulo}}</p>
               <p class="card-text">{{educacion.descripcion}}</p>
               <p class="card-text"><small class="text-muted">{{educacion.estado}}</small></p>
+              <button *ngIf ="isLoged==true" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" routerLink="" type="submit">borrar</button>
+              <button *ngIf ="isLoged==true" class="btn btn-outline-success btn-dark btn-outline-light py-0" routerLink="/EditAndNew/educacion/{{educacion.id}}" type="submit">editar</button>
             </div>
           </div>
 
 
 
-          <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
-            <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
-            <div class="card-body">
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">nombre imagen</span>
-                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">institución:</span>
-                <input type="text" class="form-control" placeholder="E.T.N°6 Fernando Fader" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Titulo:</span>
-                <input type="text" class="form-control" placeholder="Técnico en Diseño y Comunicación Publicitaria" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">descripcion:</span>
-                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">periodo:</span>
-                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">estado:</span>
-                <input type="text" class="form-control" placeholder="2014-2019(completo)" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              
-            </div>
-          </div>
 
 
-
-          <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
+          <div  class="card rounded-5 border-0 mb-3 mx-3 mt-0">
             <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
             <div class="card-body">
 

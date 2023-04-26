@@ -10,6 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class EducacionComponent  implements OnInit{
 
   public educaciones: Educacion[]=[];
+  public isLoged: boolean = false;
 
   constructor(
     private portfolioService: PortfolioService,
@@ -20,6 +21,7 @@ export class EducacionComponent  implements OnInit{
       .subscribe(data => {
         this.educaciones = data;
       });
+      this.isLoged = this.portfolioService.isLoged();
   }
   
 }
