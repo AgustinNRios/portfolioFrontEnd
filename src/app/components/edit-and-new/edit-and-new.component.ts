@@ -9,8 +9,6 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./edit-and-new.component.css']
 })
 export class EditAndNewComponent implements OnInit {
-
-  
   educacion: Educacion = null;
   
   constructor(

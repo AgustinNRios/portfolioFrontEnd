@@ -18,6 +18,7 @@
           <div *ngFor ="let educacion of educaciones" class="card rounded-5 border-0 mb-3 mx-3 mt-0"><!--*ngIf = "educaciones.length > 0 "-->
             <img [src]="educacion.img" class="card-img-top rounded-5" alt="..."><!--"/assets/img/ic-fader.jpg"-->
             <div class="card-body">
+              <h5 class="card-title">{{educacion.img}}</h5>
               <h5 class="card-title">{{educacion.institucion}}</h5>
               <p class="card-text">{{educacion.titulo}}</p>
               <p class="card-text">{{educacion.descripcion}}</p>
