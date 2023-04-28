@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent {
+  public isLoged: boolean = false;
 
 }

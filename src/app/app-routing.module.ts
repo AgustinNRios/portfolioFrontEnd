@@ -44,7 +44,7 @@ const routes: Routes = [
     component: EditAndNewComponent
   },
   {
-    path: 'New',
+    path: 'New/:area',
     component: NewComponent
   },
 

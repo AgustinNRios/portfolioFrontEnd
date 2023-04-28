@@ -1,8 +1,14 @@
-<div class="container my-4">
-  <div class="row bg-light rounded-5 ">
-    <div class="col my-3 mx-3">
+<div class="container my-4 bg-light rounded-5">
 
-      <h1 class="text-primary text-center">Hard & Soft Skills</h1>
+  <div class="row">
+    <div class="col border-light my-3">
+      <h1 class="align-middle fw-bold d-inline text-primary text-center py-0 px-3">Hard & Soft Skills   </h1>
+      <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-primary py-0" routerLink="/New/hardAndSoftSkill" type="submit">    +    </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
 
       <table class="table">
         <thead>
@@ -11,17 +17,28 @@
             <th scope="col">Nombre</th>
             <th scope="col">Nivel</th>
             <th scope="col">Categoria</th>
+            <th *ngIf ="isLoged==true" scope="col"></th>
+            <th *ngIf ="isLoged==true" scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let skill of skillList">
             <th scope="row" rowspan="">{{skill.area}}</th>
-            <td><img [src]="skillList.img" alt="">{{skill.nombre}}</td>
+            <td><img src="skillList.img" alt="">{{skill.nombre}}</td>
             <td>{{skill.nivel}}</td>
             <td>{{skill.categoria}}</td>
+            <td *ngIf ="isLoged==true" >
+              <button *ngIf ="isLoged==true" routerLink="/EditAndNew/hardAndSoftSkill/{{skill.id}}" class="btn btn-outline-success btn-dark btn-outline-light py-0"  type="submit">editar</button>
+            </td>
+            <td *ngIf ="isLoged==true" >
+              <button *ngIf ="isLoged==true" (click)="deleteHardAndSoftSkill(skill.id)" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" type="submit">borrar</button><!--     (click)="delete(acercaDeMi.id)"-->
+            </td>
           </tr>
+
+          
         </tbody>
       </table>
+
     </div>
   </div>
 

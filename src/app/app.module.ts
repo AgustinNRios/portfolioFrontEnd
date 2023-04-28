@@ -15,8 +15,6 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-//import { AngularFireModule } from '@angular/fire';
-//import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environment/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
 import { provideAuth, getAuth } from '@angular/fire/auth';
@@ -30,13 +28,16 @@ import { NewComponent } from './components/new/new.component';
     AppComponent,
     HeaderComponent,
     NavComponent,
+    FooterComponent,
+
     AcercaDeComponent,
     EducacionComponent,
     ProyectosComponent,
     ExperienciaComponent,
     HardAndSoftSkillsComponent,
+
     LoginComponent,
-    FooterComponent,
+
     EditAndNewComponent,
     NewComponent
   ],

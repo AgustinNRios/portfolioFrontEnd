@@ -1,22 +1,23 @@
 <div class="container my-4 bg-primary rounded-5">
 
     <div class="row">
-      <div class="col-4"></div>
-      <div class="col-7 border-light my-3">
-        <h1 class="align-middle fw-bold d-inline text-white text-center py-0">Acerca de mí   </h1>
-        <button class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="Login" type="submit">    +    </button>
+      <div class="col border-light my-3">
+        <h1 class="align-middle fw-bold d-inline text-white text-center py-0 px-3">Acerca de mí   </h1>
+        <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="/New/acercaDeMi" type="submit">    +    </button>
       </div>
-      <div class="col-1"></div>
     </div>
 
     <div class="row ">
       <div class="col mb-3 mx-3 mt-0">
-        <div class="card text-dark bg-light border-0 rounded-5">
-          <img src="/assets/img/banner2.png" class="card-img-top rounded-5" alt="...">
+        <div *ngFor = "let acercaDeMi of listaAcercaDeMi"class="card text-dark bg-light border-0 rounded-5">
+          <img  src="" class="card-img-top rounded-5" alt="...">
           <div class="card-body">
-            <h5 class="card-title">sobre mi</h5>
-            <p class="card-text">descripcion mia</p>
+            <h5 class="card-title">{{acercaDeMi.img}}</h5>
+            <h5 class="card-title">{{acercaDeMi.titulo}}</h5>
+            <p class="card-text">{{acercaDeMi.descripcion}}</p>
             <p class="card-text"><small class="text-muted"></small></p>
+            <button *ngIf ="isLoged==true"  (click)="deleteAcercaDeMi(acercaDeMi.id)" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" type="submit">borrar</button><!--routerLink="/EditAndNew/acercaDeMi/{{acercaDeMi.id}}"      (click)="delete(acercaDeMi.id)"-->
+            <button *ngIf ="isLoged==true" class="btn btn-outline-success btn-dark btn-outline-light py-0" routerLink="/EditAndNew/acercaDeMi/{{acercaDeMi.id}}" type="submit">editar</button>
           </div>
         </div>
       </div>

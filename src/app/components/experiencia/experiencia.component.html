@@ -1,42 +1,30 @@
 <div class="container my-4 bg-primary rounded-5">
 
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-7 border-light my-3">
-      <h1 class="align-middle fw-bold d-inline text-white text-center py-0">Experiencia   </h1>
-      <button class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="Login" type="submit">    +    </button>
+    <div class="col border-light my-3">
+      <h1 class="align-middle fw-bold d-inline text-white text-center py-0 px-3">Experiencia   </h1>
+      <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="/New/experiencia" type="submit">    +    </button>
     </div>
-    <div class="col-1"></div>
   </div>
 
   <div class="row">
 
     <div class="col">
       <div class="card-group">
-        <div class="card rounded-5 mb-3 mx-3 mt-0">
+
+        <div *ngFor = "let exp of experiencias" class="card rounded-5 mb-3 mx-3 mt-0">
           <img src="/assets/img/banner1.png" class="card-img-top rounded-5" alt="...">
           <div class="card-body">
-            <h5 class="card-title">empresa</h5>
-            <p class="card-text">cargo</p>
-            <p class="card-text"><small class="text-muted">info adicional</small></p>
+            <h5 class="card-title">{{exp.img}}</h5>
+            <h5 class="card-title">{{exp.empresa}}</h5>
+            <p class="card-text">{{exp.cargo}}</p>
+            <p class="card-text">{{exp.periodo}}</p>
+            <p class="card-text"><small class="text-muted">{{exp.descripcion}}</small></p>
           </div>
+          <button *ngIf ="isLoged==true"  (click)="deleteExperiencia(exp.id)" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" type="submit">borrar</button><!--routerLink="/EditAndNew/acercaDeMi/{{acercaDeMi.id}}"      (click)="delete(acercaDeMi.id)"-->
+          <button *ngIf ="isLoged==true" routerLink="/EditAndNew/experiencia/{{exp.id}}" class="btn btn-outline-success btn-dark btn-outline-light py-0"  type="submit">editar</button>
         </div>
-        <div class="card rounded-5 mb-3 mx-3 mt-0">
-          <img src="/assets/img/banner1.png" class="card-img-top rounded-5" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">empresa</h5>
-            <p class="card-text">cargo</p>
-            <p class="card-text"><small class="text-muted">info adicional</small></p>
-          </div>
-        </div>
-        <div class="card rounded-5 mb-3 mx-3 mt-0">
-          <img src="/assets/img/banner1.png" class="card-img-top rounded-5" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">empresa</h5>
-            <p class="card-text">cargo</p>
-            <p class="card-text"><small class="text-muted">info adicional</small></p>
-          </div>
-        </div>
+
       </div>
 
     </div>

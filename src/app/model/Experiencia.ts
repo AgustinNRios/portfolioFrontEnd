@@ -1,4 +1,4 @@
-export class Educacion {
+export class Experiencia {
     id?: number;
     img: String;
     empresa: String;

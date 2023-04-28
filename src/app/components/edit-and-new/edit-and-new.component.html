@@ -2,26 +2,64 @@
 <div class="container bg-primary my-4 rounded-5">
 
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-7 border-light my-3">
-          <h1 class="align-middle fw-bold d-inline text-white text-center py-0">Edit And New  </h1>
+        <div class="col border-light my-3">
+          <h1 class="align-middle fw-bold d-inline text-white text-center py-0 px-3">Editar </h1>
         </div>
-        <div class="col-1"></div>
+          <!--variacion segun el area del componente a modificar-->
+          <h3 *ngIf ="area=='acercaDeMi'" class="align-middle fw-bold d-inline text-white text-center py-0">Acerca De mi</h3>
+          <h3 *ngIf ="area=='educacion'" class="align-middle fw-bold d-inline text-white text-center py-0">Educación</h3>
+          <h3 *ngIf ="area=='hardAndSoftSkill'" class="align-middle fw-bold d-inline text-white text-center py-0">Hard And Soft Skill</h3>
+          <h3 *ngIf ="area=='experiencia'" class="align-middle fw-bold d-inline text-white text-center py-0">Experiencia</h3>
       </div>
- 
-      <form (ngSubmit)="onUpdate()">
+
+      <!--//////////////////////  Acerca De Mi  //////////////////////////-->
+
+      <form *ngIf ="area=='acercaDeMi'" (ngSubmit)="onUpdate()">
 
         <div class="card rounded-5 border-0 mb-0 mx-3 mt-0">
-          <img src="/assets/img/ic-fader.jpg" class="card-img-top rounded-5" alt="...">
+          <img src="" class="card-img-top rounded-5" alt="...">
           <div class="card-body my-0">
   
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">img:</span>
+              <span class="input-group-text" id="basic-addon1">Img:</span>
+              <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="aDM.img">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Titulo:</span>
+              <input type="text" class="form-control" id="tituloE" name="tituloE" [(ngModel)]="aDM.titulo">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Descripcion:</span>
+              <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="aDM.descripcion">
+            </div>
+          
+          </div>
+
+          <button type="submit" class="btn btn-dark mb-3 mx-5">
+            Editar Acerca De Mi
+          </button>
+
+        </div>
+
+      </form>
+
+      <!--//////////////////////  Educación  //////////////////////////-->
+ 
+      <form *ngIf ="area=='educacion'" (ngSubmit)="onUpdate()">
+
+        <div class="card rounded-5 border-0 mb-0 mx-3 mt-0">
+          <img src="" class="card-img-top rounded-5" alt="...">
+          <div class="card-body my-0">
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Img:</span>
               <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacion.img">
             </div>
   
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">institución:</span>
+              <span class="input-group-text" id="basic-addon1">Institución:</span>
               <input type="text" class="form-control" id="institucionE" name="institucionE" [(ngModel)]="educacion.institucion">
             </div>
   
@@ -31,20 +69,105 @@
             </div>
   
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">descripcion:</span>
+              <span class="input-group-text" id="basic-addon1">Descripcion:</span>
               <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="educacion.descripcion">
             </div>
   
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">estado:</span>
+              <span class="input-group-text" id="basic-addon1">Estado:</span>
               <input type="text" class="form-control" id="estadoE" name="estadoE" [(ngModel)]="educacion.estado">
             </div>
-          
           
           </div>
 
           <button type="submit" class="btn btn-dark mb-3 mx-5">
-            Editar educacion
+            Editar Educación
+          </button>
+
+        </div>
+
+      </form>
+
+      <!--//////////////////////  Hard And Soft Skill  //////////////////////////-->
+
+      <form *ngIf ="area=='hardAndSoftSkill'" (ngSubmit)="onUpdate()">
+
+        <div class="card rounded-5 border-0 mb-0 mx-3 mt-0">
+          <img src="" class="card-img-top rounded-5" alt="...">
+          <div class="card-body my-0">
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Img:</span>
+              <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="hASS.img">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Area:</span>
+              <input type="text" class="form-control" id="institucionE" name="institucionE" [(ngModel)]="hASS.area">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Nombre:</span>
+              <input type="text" class="form-control" id="tituloE" name="tituloE" [(ngModel)]="hASS.nombre">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Nivel:</span>
+              <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="hASS.nivel">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Categoria:</span>
+              <input type="text" class="form-control" id="estadoE" name="estadoE" [(ngModel)]="hASS.categoria">
+            </div>
+          
+          </div>
+
+          <button type="submit" class="btn btn-dark mb-3 mx-5">
+            Editar Educación
+          </button>
+
+        </div>
+
+      </form>
+
+      <!--//////////////////////  Experiencia  //////////////////////////-->
+
+      <form *ngIf ="area=='experiencia'" (ngSubmit)="onUpdate()">
+
+        <div class="card rounded-5 border-0 mb-0 mx-3 mt-0">
+          <img src="" class="card-img-top rounded-5" alt="...">
+          <div class="card-body my-0">
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Img:</span>
+              <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="exp.img">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Empresa:</span>
+              <input type="text" class="form-control" id="institucionE" name="institucionE" [(ngModel)]="exp.empresa">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Cargo:</span>
+              <input type="text" class="form-control" id="tituloE" name="tituloE" [(ngModel)]="exp.cargo">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Periodo:</span>
+              <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="exp.periodo">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Descripcion:</span>
+              <input type="text" class="form-control" id="estadoE" name="estadoE" [(ngModel)]="exp.descripcion">
+            </div>
+          
+          </div>
+
+          <button type="submit" class="btn btn-dark mb-3 mx-5">
+            Editar Educación
           </button>
 
         </div>

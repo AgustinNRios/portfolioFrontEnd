@@ -29,7 +29,7 @@ export class EducacionComponent  implements OnInit{
     this.isLoged = this.portfolioService.isLoged();
   }
 
-  delete(id?: number){
+  deleteEducacion(id?: number){
     if( id != undefined){
       this.portfolioService.deleteEducacion(id).subscribe(
         data => {    this.cargarEducacion()

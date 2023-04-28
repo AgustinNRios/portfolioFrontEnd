@@ -1,4 +1,4 @@
-export class Educacion {
+export class HardAndSoftSkill {
     id?: number;
     img: String;
     area: String;
