@@ -15,7 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { environment } from '../environment/environment';
+import { environment } from '../environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';

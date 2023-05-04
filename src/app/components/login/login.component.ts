@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-login',
@@ -34,8 +35,11 @@ export class LoginComponent implements OnInit{
         console.log(response);
         sessionStorage.setItem("tokenKey", "true");
         this.isLoged = this.portfolioService.isLoged();
+        location.reload();
+        //this.router.navigateByUrl("/AcercaDe")
       })
       .catch((error) => console.log(error));
+      
   }
  
   ngOnInit(): void {

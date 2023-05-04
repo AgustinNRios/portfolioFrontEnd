@@ -4,6 +4,7 @@ import { AcercaDeMi } from 'src/app/model/AcercaDeMi';
 import { Educacion } from 'src/app/model/Educacion';
 import { Experiencia } from 'src/app/model/Experiencia';
 import { HardAndSoftSkill } from 'src/app/model/HardAndSoftSkill';
+import { ImageService } from 'src/app/services/image.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -22,7 +23,10 @@ export class EditAndNewComponent implements OnInit {
   constructor(
     private portfolioService: PortfolioService,
     private activatedRouter : ActivatedRoute,
-    private router: Router
+    private router: Router,
+    /*
+    public imageService: ImageService,
+    */
   ) { }
 
   ngOnInit(): void {
@@ -123,4 +127,10 @@ export class EditAndNewComponent implements OnInit {
     }
 
   }
+  /*
+  uploadImage($event:any){
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "imgAcercaDeMi_" + id;
+    this.imageService.uploadImage($event, name)}
+   */
 }

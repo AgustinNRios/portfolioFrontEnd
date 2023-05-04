@@ -1,10 +1,7 @@
 <div class="container my-4 bg-light rounded-5">
 
   <div class="row">
-    <div class="col border-light my-3">
-      <h1 class="align-middle fw-bold d-inline text-primary text-center py-0 px-3">Hard & Soft Skills   </h1>
-      <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-primary py-0" routerLink="/New/hardAndSoftSkill" type="submit">    +    </button>
-    </div>
+    <h1 class="my-3 align-middle fw-bold d-inline text-primary text-center py-0 px-3">Hard & Soft Skills   <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-dark py-0" routerLink="/New/hardAndSoftSkill" type="submit">    +    </button></h1>
   </div>
 
   <div class="row">
@@ -23,8 +20,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let skill of skillList">
+
             <th scope="row" rowspan="">{{skill.area}}</th>
-            <td><img src="skillList.img" alt="">{{skill.nombre}}</td>
+            <td>{{skill.nombre}}</td>
             <td>{{skill.nivel}}</td>
             <td>{{skill.categoria}}</td>
             <td *ngIf ="isLoged==true" >

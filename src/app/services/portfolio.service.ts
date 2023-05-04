@@ -6,6 +6,7 @@ import { Educacion } from '../model/Educacion';
 import { Experiencia } from '../model/Experiencia';
 import { HardAndSoftSkill } from '../model/HardAndSoftSkill';
 import { AcercaDeMi } from '../model/AcercaDeMi';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ import { AcercaDeMi } from '../model/AcercaDeMi';
 export class PortfolioService{
 
   constructor(private http:HttpClient,private router: Router,){ }
+
   public isLog: boolean= false;
+  //url: string= environment.apiURL
+  url: string= "http://localhost:8080/"//url local
 
   isLoged(): boolean
   {
@@ -36,28 +40,28 @@ export class PortfolioService{
 
 
 
-  ///////////////////      CRUD Educación       /////////////////////////////
+  ///////////////////      CRUD Educación       ///////////////////////////// 
 
 
 
   addEducacion(educacion:Educacion): Observable<Educacion>{
-    return this.http.post<Educacion>(`http://localhost:8080/educacion/new`, educacion)
+    return this.http.post<Educacion>(this.url+`educacion/new`, educacion)
   }
 
   getEducacion(): Observable<Educacion[]>{
-    return this.http.get<Educacion[]>(`http://localhost:8080/educacion/lista`);
+    return this.http.get<Educacion[]>(this.url+`educacion/lista`);
   }
 
   getEducacionPorId(id: number): Observable<Educacion>{
-    return this.http.get<Educacion>(`http://localhost:8080/educacion/get/${id}`);
+    return this.http.get<Educacion>(this.url+`educacion/get/${id}`);
   }
 
   updateEducacion(id: number, educacion:Educacion): Observable<Educacion>{
-    return this.http.put<Educacion>(`http://localhost:8080/educacion/update/${id}`, educacion)
+    return this.http.put<Educacion>(this.url+`educacion/update/${id}`, educacion)
   }
  
   deleteEducacion(id: number): Observable<Educacion>{
-   return this.http.delete<Educacion>(`http://localhost:8080/educacion/delete/${id}`);
+   return this.http.delete<Educacion>(this.url+`educacion/delete/${id}`);
   }
 
 
@@ -67,23 +71,23 @@ export class PortfolioService{
 
 
   addExperiencia(experiencia:Experiencia): Observable<Experiencia>{
-    return this.http.post<Experiencia>(`http://localhost:8080/experiencia/new`, experiencia)
+    return this.http.post<Experiencia>(this.url+`experiencia/new`, experiencia)
   }
 
   getExperiencia(): Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>(`http://localhost:8080/experiencia/lista`);
+    return this.http.get<Experiencia[]>(this.url+`experiencia/lista`);
   }
 
   getExperienciaPorId(id: number): Observable<Experiencia>{
-    return this.http.get<Experiencia>(`http://localhost:8080/experiencia/get/${id}`);
+    return this.http.get<Experiencia>(this.url+`experiencia/get/${id}`);
   }
 
   updateExperiencia(id: number, experiencia:Experiencia): Observable<Experiencia>{
-    return this.http.put<Experiencia>(`http://localhost:8080/experiencia/update/${id}`, experiencia)
+    return this.http.put<Experiencia>(this.url+`experiencia/update/${id}`, experiencia)
   }
  
   deleteExperiencia(id: number): Observable<Experiencia>{
-   return this.http.delete<Experiencia>(`http://localhost:8080/experiencia/delete/${id}`);
+   return this.http.delete<Experiencia>(this.url+`experiencia/delete/${id}`);
   }
 
 
@@ -93,23 +97,23 @@ export class PortfolioService{
 
 
   addHardAndSoftSkill(hardAndSoftSkill:HardAndSoftSkill): Observable<HardAndSoftSkill>{
-    return this.http.post<HardAndSoftSkill>(`http://localhost:8080/hardAndSoftSkill/new`, hardAndSoftSkill)
+    return this.http.post<HardAndSoftSkill>(this.url+`hardAndSoftSkill/new`, hardAndSoftSkill)
   }
 
   getHardAndSoftSkill(): Observable<HardAndSoftSkill[]>{
-    return this.http.get<HardAndSoftSkill[]>(`http://localhost:8080/hardAndSoftSkill/lista`);
+    return this.http.get<HardAndSoftSkill[]>(this.url+`hardAndSoftSkill/lista`);
   }
 
   getHardAndSoftSkillPorId(id: number): Observable<HardAndSoftSkill>{
-    return this.http.get<HardAndSoftSkill>(`http://localhost:8080/hardAndSoftSkill/get/${id}`);
+    return this.http.get<HardAndSoftSkill>(this.url+`hardAndSoftSkill/get/${id}`);
   }
 
   updateHardAndSoftSkill(id: number, hardAndSoftSkill:HardAndSoftSkill): Observable<HardAndSoftSkill>{
-    return this.http.put<HardAndSoftSkill>(`http://localhost:8080/hardAndSoftSkill/update/${id}`, hardAndSoftSkill)
+    return this.http.put<HardAndSoftSkill>(this.url+`hardAndSoftSkill/update/${id}`, hardAndSoftSkill)
   }
  
   deleteHardAndSoftSkill(id: number): Observable<HardAndSoftSkill>{
-   return this.http.delete<HardAndSoftSkill>(`http://localhost:8080/hardAndSoftSkill/delete/${id}`);
+   return this.http.delete<HardAndSoftSkill>(this.url+`hardAndSoftSkill/delete/${id}`);
   }
 
 
@@ -119,23 +123,23 @@ export class PortfolioService{
 
 
   addAcercaDeMi(acercaDeMi:AcercaDeMi): Observable<AcercaDeMi>{
-    return this.http.post<AcercaDeMi>(`http://localhost:8080/acercaDeMi/new`, acercaDeMi)
+    return this.http.post<AcercaDeMi>(this.url+`acercaDeMi/new`, acercaDeMi)
   }
 
   getAcercaDeMi(): Observable<AcercaDeMi[]>{
-    return this.http.get<AcercaDeMi[]>(`http://localhost:8080/acercaDeMi/lista`);
+    return this.http.get<AcercaDeMi[]>(this.url+`acercaDeMi/lista`);
   }
 
   getAcercaDeMiPorId(id: number): Observable<AcercaDeMi>{
-    return this.http.get<AcercaDeMi>(`http://localhost:8080/acercaDeMi/get/${id}`);
+    return this.http.get<AcercaDeMi>(this.url+`acercaDeMi/get/${id}`);
   }
 
   updateAcercaDeMi(id: number, acercaDeMi:AcercaDeMi): Observable<AcercaDeMi>{
-    return this.http.put<AcercaDeMi>(`http://localhost:8080/acercaDeMi/update/${id}`, acercaDeMi)
+    return this.http.put<AcercaDeMi>(this.url+`acercaDeMi/update/${id}`, acercaDeMi)
   }
  
   deleteAcercaDeMi(id: number): Observable<AcercaDeMi>{
-   return this.http.delete<AcercaDeMi>(`http://localhost:8080/acercaDeMi/delete/${id}`);
+   return this.http.delete<AcercaDeMi>(this.url+`acercaDeMi/delete/${id}`);
   }
 
 

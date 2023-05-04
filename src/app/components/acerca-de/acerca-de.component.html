@@ -1,18 +1,23 @@
 <div class="container my-4 bg-primary rounded-5">
 
     <div class="row">
-      <div class="col border-light my-3">
-        <h1 class="align-middle fw-bold d-inline text-white text-center py-0 px-3">Acerca de mí   </h1>
-        <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="/New/acercaDeMi" type="submit">    +    </button>
-      </div>
+      <h1 class="align-middle fw-bold d-inline text-white text-center py-3 px-3">Acerca de mí   <button *ngIf ="isLoged==true" class="d-inline btn btn-outline-success btn-sm btn-outline-light py-0" routerLink="/New/acercaDeMi" type="submit">    +    </button></h1>  
     </div>
 
     <div class="row ">
       <div class="col mb-3 mx-3 mt-0">
-        <div *ngFor = "let acercaDeMi of listaAcercaDeMi"class="card text-dark bg-light border-0 rounded-5">
-          <img  src="" class="card-img-top rounded-5" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{acercaDeMi.img}}</h5>
+        
+
+        <div *ngFor = "let acercaDeMi of listaAcercaDeMi"class="mb-4 card text-dark bg-light border-0 rounded-5">
+
+
+          <div class="card-body ">
+
+            <div *ngIf="acercaDeMi.img">
+              <img src="" class="card-img-top rounded-5" alt="...">
+              <h5 class="card-title">{{acercaDeMi.img}}</h5>
+            </div>
+
             <h5 class="card-title">{{acercaDeMi.titulo}}</h5>
             <p class="card-text">{{acercaDeMi.descripcion}}</p>
             <p class="card-text"><small class="text-muted"></small></p>
@@ -20,7 +25,10 @@
             <button *ngIf ="isLoged==true" class="btn btn-outline-success btn-dark btn-outline-light py-0" routerLink="/EditAndNew/acercaDeMi/{{acercaDeMi.id}}" type="submit">editar</button>
           </div>
         </div>
+
+
       </div>
     </div>
+</div>
 
-  </div>
+
