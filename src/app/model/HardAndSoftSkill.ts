@@ -3,14 +3,14 @@ export class HardAndSoftSkill {
     img: String;
     area: String;
     nombre: String;
-    nivel: String;
+    nivel: number;
     categoria: String;
 
         constructor(
             img: String,
             area: String,
             nombre: String,
-            nivel: String,
+            nivel: number,
             categoria: String,)  
         {
         this.img = img;

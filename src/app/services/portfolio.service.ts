@@ -36,6 +36,7 @@ export class PortfolioService{
   obtenerDatos():Observable<any>{
     console.log("el servicio esta corriendo");
     return this.http.get('/assets/data/data.json');
+
   }
 
 

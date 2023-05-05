@@ -24,9 +24,9 @@ export class EditAndNewComponent implements OnInit {
     private portfolioService: PortfolioService,
     private activatedRouter : ActivatedRoute,
     private router: Router,
-    /*
+    
     public imageService: ImageService,
-    */
+    
   ) { }
 
   ngOnInit(): void {
@@ -81,56 +81,87 @@ export class EditAndNewComponent implements OnInit {
 
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
+
+
     if(this.area=="acercaDeMi")
     {
+      //imagen
+      this.aDM.img = this.imageService.url
+      //resto
       this.portfolioService.updateAcercaDeMi(id, this.aDM).subscribe(
         data => {
-          //this.router.navigate(['']);
+          this.router.navigate(['/AcercaDe']);
         }, err => {
           alert("Error al modificar la aDM");
-          //this.router.navigate(['']);
+          this.router.navigate(['/AcercaDe']);
         }
       )
     }
     if(this.area=="educacion")
     {
+      //imagen
+      this.educacion.img = this.imageService.url
+
       this.portfolioService.updateEducacion(id, this.educacion).subscribe(
         data => {
-          this.router.navigate(['']);
+          this.router.navigate(['/Educacion']);
         }, err => {
           alert("Error al modificar la educacion");
-          this.router.navigate(['']);
+          this.router.navigate(['/Educacion']);
         }
       )
     }
     if(this.area=="hardAndSoftSkill")
     {
+      //imagen
+      this.hASS.img = this.imageService.url
+
       this.portfolioService.updateHardAndSoftSkill(id, this.hASS).subscribe(
         data => {
-          this.router.navigate(['']);
+          this.router.navigate(['/hardAndSoftSkills']);
         }, err => {
           alert("Error al modificar la hASS");
-          this.router.navigate(['']);
+          this.router.navigate(['/hardAndSoftSkills']);
         }
       )
     }
     if(this.area=="experiencia")
     {
+      //imagen
+      this.exp.img = this.imageService.url
+
       this.portfolioService.updateExperiencia(id, this.exp).subscribe(
         data => {
-          this.router.navigate(['']);
+          this.router.navigate(['/Experiencia']);
         }, err => {
           alert("Error al modificar la exp");
-          this.router.navigate(['']);
+          this.router.navigate(['/Experiencia']);
         }
       )
     }
 
   }
-  /*
+  
   uploadImage($event:any){
     const id = this.activatedRouter.snapshot.params['id'];
-    const name = "imgAcercaDeMi_" + id;
+    let name = "";
+    if(this.area=="acercaDeMi")
+    {
+      name = "imgAcercaDeMi_" + id;
+    }
+    if(this.area=="educacion")
+    {
+      name = "imgEducacion_" + id;
+    }
+    if(this.area=="hardAndSoftSkill")
+    {
+      name = "imgHardAndSoftSkill_" + id;
+    }
+    if(this.area=="experiencia")
+    {
+      name = "imgExperiencia_" + id;
+    }
+
     this.imageService.uploadImage($event, name)}
-   */
+   
 }

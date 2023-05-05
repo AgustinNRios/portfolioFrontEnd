@@ -13,12 +13,11 @@
 
           <div class="card-body ">
 
-            <div *ngIf="acercaDeMi.img">
-              <img src="" class="card-img-top rounded-5" alt="...">
-              <h5 class="card-title">{{acercaDeMi.img}}</h5>
+            <div *ngIf="acercaDeMi.img" class="mb-3">
+              <img [src]="acercaDeMi.img" class="card-img-top rounded-5" alt="...">
             </div>
 
-            <h5 class="card-title">{{acercaDeMi.titulo}}</h5>
+            <h5 class="card-title mt-3">{{acercaDeMi.titulo}}</h5>
             <p class="card-text">{{acercaDeMi.descripcion}}</p>
             <p class="card-text"><small class="text-muted"></small></p>
             <button *ngIf ="isLoged==true"  (click)="deleteAcercaDeMi(acercaDeMi.id)" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" type="submit">borrar</button><!--routerLink="/EditAndNew/acercaDeMi/{{acercaDeMi.id}}"      (click)="delete(acercaDeMi.id)"-->

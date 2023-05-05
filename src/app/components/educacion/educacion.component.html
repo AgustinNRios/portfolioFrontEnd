@@ -14,14 +14,14 @@
             <div class="card-body">
 
               <div *ngIf="educacion.img">
-                <img src="" class="card-img-top rounded-5" alt="...">
-                <h5 class="card-title">{{educacion.img}}</h5>
+                <img [src]="educacion.img" class="card-img-top rounded-5" alt="...">
               </div>
 
-              <h5 class="card-title">{{educacion.institucion}}</h5>
-              <p class="card-text">{{educacion.titulo}}</p>
-              <p class="card-text">{{educacion.descripcion}}</p>
+              <h2 class="card-title mb-0 mt-3">{{educacion.institucion}}</h2>
+              <h6 class="card-subtitle mt-1 mb-3 text-body-secondary text-secondary">{{educacion.titulo}}</h6>
+              <p class="card-text mb-0">{{educacion.descripcion}}</p>
               <p class="card-text"><small class="text-muted">{{educacion.estado}}</small></p>
+              
               <button *ngIf ="isLoged==true" (click)="deleteEducacion(educacion.id)" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" type="submit">borrar</button>
               <button *ngIf ="isLoged==true" class="btn btn-outline-success btn-dark btn-outline-light py-0" routerLink="/EditAndNew/educacion/{{educacion.id}}" type="submit">editar</button>
             </div>

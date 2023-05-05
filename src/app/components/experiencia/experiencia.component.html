@@ -13,15 +13,13 @@
           <div class="card-body">
 
             <div *ngIf="exp.img">
-              <img src="" class="card-img-top rounded-5" alt="...">
-              <h5 class="card-title">{{exp.img}}</h5>
+              <img [src]="exp.img" class="card-img-top rounded-5" alt="...">
             </div>
 
-            <h5 class="card-title">{{exp.img}}</h5>
-            <h5 class="card-title">{{exp.empresa}}</h5>
-            <p class="card-text">{{exp.cargo}}</p>
-            <p class="card-text">{{exp.periodo}}</p>
-            <p class="card-text"><small class="text-muted">{{exp.descripcion}}</small></p>
+            <h2 class="card-title mb-0 mt-3">{{exp.empresa}}</h2>
+            <h6 class="card-subtitle mt-1 mb-3 text-body-secondary text-secondary">{{exp.cargo}}</h6>
+            <p class="card-text mb-0">{{exp.descripcion}}</p>
+            <p class="card-text text-muted">{{exp.periodo}}</p>
 
             <button *ngIf ="isLoged==true"  (click)="deleteExperiencia(exp.id)" class="d-inline btn-danger btn btn-outline-success btn-outline-light py-0" type="submit">borrar</button><!--routerLink="/EditAndNew/acercaDeMi/{{acercaDeMi.id}}"      (click)="delete(acercaDeMi.id)"-->
             <button *ngIf ="isLoged==true" routerLink="/EditAndNew/experiencia/{{exp.id}}" class="btn btn-outline-success btn-dark btn-outline-light py-0"  type="submit">editar</button>

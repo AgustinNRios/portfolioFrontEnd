@@ -5,8 +5,6 @@ import { Storage, ref , uploadBytes, list, getDownloadURL} from '@angular/fire/s
   providedIn: 'root'
 })
 export class ImageService {
-
-  /*
   
   url: string = "";
 
@@ -20,20 +18,24 @@ export class ImageService {
     
     const imgRef = ref(this.storage, 'imagen/'+ name)
     uploadBytes(imgRef, file)
-    .then(response => {this.getImages()})
+    .then(response => {this.getImages(name)})
     .catch(error => console.log(error))
   }
   
-  getImages(){
+  getImages(name: string){
     const imagesRef = ref(this.storage, 'imagen')
     list(imagesRef)
     .then(async response => {
       for(let item of response.items){
-        this.url = await getDownloadURL(item);
-        console.log("La URL es: " + this.url);
+        console.log("el nombre del item es: "+ item.name)
+        if(name==item.name)
+        {
+          this.url = await getDownloadURL(item);
+          console.log("La URL es: " + this.url);
+        }
       }
     })
     .catch(error => console.log(error))
   }
-  */
+  
 }

@@ -21,12 +21,12 @@
         <div class="card-body my-0">
 
           <div *ngIf="aDM.img">
-            <img src="" class="card-img-top rounded-5" alt="...">
+            <img [src]="aDM.img" class="card-img-top rounded-5" alt="...">
           </div>
 
           <div class="input-group mb-3">
             <label for="formFile" class="form-label"></label>
-            <input class="form-control" type="file" id="img" name="img" [(ngModel)]="aDM.img"  accept=".jpg, .jpeg .png"> <!--(change) ="uploadImage($event)" -->
+            <input (change) ="uploadImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control"  id="img" name="img" [(ngModel)]="aDM.img"  > <!-- -->
           </div>
 
           <div class="input-group mb-3">
@@ -54,12 +54,12 @@
     <form *ngIf ="area=='educacion'" (ngSubmit)="onUpdate()">
 
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
-        <img src="" class="card-img-top rounded-5" alt="...">
+        <img [src]="educacion.img" class="card-img-top rounded-5" alt="...">
         <div class="card-body my-0">
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Img:</span>
-            <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacion.img">
+            <input (change) ="uploadImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacion.img">
           </div>
 
           <div class="input-group mb-3">
@@ -97,12 +97,12 @@
     <form *ngIf ="area=='hardAndSoftSkill'" (ngSubmit)="onUpdate()">
 
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
-        <img src="" class="card-img-top rounded-5" alt="...">
+        <img [src]="hASS.img" class="card-img-top rounded-5" alt="...">
         <div class="card-body my-0">
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Img:</span>
-            <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="hASS.img">
+            <input (change) ="uploadImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="hASS.img">
           </div>
 
           <div class="input-group mb-3">
@@ -140,12 +140,12 @@
     <form *ngIf ="area=='experiencia'" (ngSubmit)="onUpdate()">
 
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
-        <img src="" class="card-img-top rounded-5" alt="...">
+        <img [src]="exp.img" class="card-img-top rounded-5" alt="...">
         <div class="card-body my-0">
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Img:</span>
-            <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="exp.img">
+            <input (change) ="uploadImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="exp.img">
           </div>
 
           <div class="input-group mb-3">
@@ -181,39 +181,4 @@
   <div>
       
 </div>
-
-
-<!--
-<div class="container" *ngIf="educacion">
-  <div class="row">
-      <div>
-          <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-              <div class="form-group">
-                  <label for="imgE">Nombre de la institucion</label>
-                  <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacion.img" required>
-              </div>
-              <div class="form-group">
-                  <label for="institucionE">Descripcion de sus estudios</label>
-                  <input type="text" class="form-control" id="institucionE" name="institucionE" [(ngModel)]="educacion.institucion" required>
-              </div>
-              <div class="form-group">
-                <label for="tituloE">Descripcion de sus estudios</label>
-                <input type="text" class="form-control" id="tituloE" name="tituloE" [(ngModel)]="educacion.titulo" required>
-            </div>
-            <div class="form-group">
-              <label for="estadoE">Descripcion de sus estudios</label>
-              <input type="text" class="form-control" id="estadoE" name="estadoE" [(ngModel)]="educacion.estado" required>
-            </div>
-            <div class="form-group">
-              <label for="descripcionE">Descripcion de sus estudios</label>
-              <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="educacion.descripcion" required>
-            </div>
-              <button class="btn btn-primary">
-                  Editar educacion
-              </button>
-          </form>
-      </div>
-  </div>
-</div>
--->
 

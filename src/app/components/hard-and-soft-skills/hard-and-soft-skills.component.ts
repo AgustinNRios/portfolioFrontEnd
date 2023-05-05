@@ -10,6 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class HardAndSoftSkillsComponent implements OnInit {
   public skillList: HardAndSoftSkill[]=[];
   public isLoged: boolean = false;
+  numeroDeNivel: string = "90%";
 
   constructor(
     private portfolioService: PortfolioService,

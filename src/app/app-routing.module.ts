@@ -8,6 +8,7 @@ import { HardAndSoftSkillsComponent } from './components/hard-and-soft-skills/ha
 import { LoginComponent } from './components/login/login.component';
 import { EditAndNewComponent } from './components/edit-and-new/edit-and-new.component';
 import { NewComponent } from './components/new/new.component';
+import { canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {
@@ -41,11 +42,11 @@ const routes: Routes = [
   },
   {
     path: 'EditAndNew/:area/:id',
-    component: EditAndNewComponent
+    component: EditAndNewComponent, ...canActivate(()=>redirectUnauthorizedTo(['/Login']))
   },
   {
     path: 'New/:area',
-    component: NewComponent
+    component: NewComponent, ...canActivate(()=>redirectUnauthorizedTo(['/Login']))
   },
 
 ];

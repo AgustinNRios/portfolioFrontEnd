@@ -1,11 +1,7 @@
 <div class="container bg-primary my-4 rounded-5">
 
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-7 border-light my-3">
-      <h1 class="align-middle fw-bold d-inline text-white text-center py-0">  New  </h1>
-    </div>
-    <div class="col-1"></div>
+      <h1 class="my-3 align-middle fw-bold d-inline text-white text-center py-0">  New  </h1>
   </div>
 
   <div class="row">
@@ -16,9 +12,9 @@
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
         <div class="card-body my-0">
 
-          <div class="input-group mb-3">
-            <label for="formFile" class="form-label"></label>
-            <input class="form-control" type="file" id="formFile">
+          <div class="input-group my-3">
+            <span class="input-group-text" id="basic-addon1">Img:</span>
+            <input (change) ="uploadNewImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="aDMImg">
           </div>
 
           <div class="input-group mb-3">
@@ -48,9 +44,9 @@
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
         <div class="card-body my-0">
 
-          <div class="input-group mb-3">
+          <div class="input-group my-3">
             <span class="input-group-text" id="basic-addon1">Img:</span>
-            <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacionImg">
+            <input (change) ="uploadNewImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="educacionImg">
           </div>
 
           <div class="input-group mb-3">
@@ -90,9 +86,9 @@
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
         <div class="card-body my-0">
 
-          <div class="input-group mb-3">
+          <div class="input-group my-3">
             <span class="input-group-text" id="basic-addon1">Img:</span>
-            <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="hASSImg">
+            <input (change) ="uploadNewImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="hASSImg">
           </div>
 
           <div class="input-group mb-3">
@@ -132,9 +128,9 @@
       <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
         <div class="card-body my-0">
 
-          <div class="input-group mb-3">
+          <div class="input-group my-3">
             <span class="input-group-text" id="basic-addon1">Img:</span>
-            <input type="text" class="form-control" id="imgE" name="imgE" [(ngModel)]="expImg">
+            <input (change) ="uploadNewImage($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="expImg">
           </div>
 
           <div class="input-group mb-3">

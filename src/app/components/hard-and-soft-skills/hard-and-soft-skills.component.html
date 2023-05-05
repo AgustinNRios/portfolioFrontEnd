@@ -22,8 +22,13 @@
           <tr *ngFor="let skill of skillList">
 
             <th scope="row" rowspan="">{{skill.area}}</th>
-            <td>{{skill.nombre}}</td>
-            <td>{{skill.nivel}}</td>
+
+            <td><div><img [src]="skill.img" class="img-thumbnail" width="100" height="" alt="...">{{skill.nombre}}</div> </td>
+            <td>
+              <div class="progress bg-dark mt-2" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" [ngStyle]="{'width': skill.nivel+'%'}"></div>
+              </div>
+            </td>
             <td>{{skill.categoria}}</td>
             <td *ngIf ="isLoged==true" >
               <button *ngIf ="isLoged==true" routerLink="/EditAndNew/hardAndSoftSkill/{{skill.id}}" class="btn btn-outline-success btn-dark btn-outline-light py-0"  type="submit">editar</button>
