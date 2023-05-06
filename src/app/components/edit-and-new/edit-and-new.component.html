@@ -12,6 +12,34 @@
 
   <div class="row">
 
+    <!--//////////////////////  Banner y Perfil  //////////////////////////-->
+
+    <form *ngIf ="area=='perfil'" (ngSubmit)="onUpdate()">
+
+      <div class="card rounded-5 border-0 mb-3 mx-3 mt-0">
+        <img [src]="hASS.img" class="card-img-top rounded-5" alt="...">
+        <div class="card-body my-0">
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Subir Banner:</span>
+            <input (change) ="uploadImageBanner($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" >
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Subir perfil:</span>
+            <input (change) ="uploadImagePerfil($event)" accept=".jpg, .jpeg .png" type="file" class="form-control" >
+          </div>
+        
+        </div>
+
+        <button type="submit" class="btn btn-dark mb-3 mx-5">
+          Editar perfil/banner
+        </button>
+
+      </div>
+
+    </form>
+
     <!--//////////////////////  Acerca De Mi  //////////////////////////-->
 
     <form *ngIf ="area=='acercaDeMi'" (ngSubmit)="onUpdate()" class="">
@@ -91,6 +119,9 @@
       </div>
 
     </form>
+
+    
+
 
     <!--//////////////////////  Hard And Soft Skill  //////////////////////////-->
 

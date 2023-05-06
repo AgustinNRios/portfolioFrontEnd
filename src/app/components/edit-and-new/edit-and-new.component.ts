@@ -82,7 +82,20 @@ export class EditAndNewComponent implements OnInit {
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
 
-
+    if(this.area=="perfil")
+    {
+      //imagen
+      this.aDM.img = this.imageService.url
+      //resto
+      this.portfolioService.updateAcercaDeMi(id, this.aDM).subscribe(
+        data => {
+          this.router.navigate(['/AcercaDe']);
+        }, err => {
+          alert("Error al modificar la aDM");
+          this.router.navigate(['/AcercaDe']);
+        }
+      )
+    }
     if(this.area=="acercaDeMi")
     {
       //imagen
@@ -162,6 +175,17 @@ export class EditAndNewComponent implements OnInit {
       name = "imgExperiencia_" + id;
     }
 
-    this.imageService.uploadImage($event, name)}
+    this.imageService.uploadImage($event, name)
+  }
+
+    uploadImagePerfil($event:any){
+      let namePerfil = "perfil.png";
+      this.imageService.uploadImage($event, namePerfil)
+    }
+
+    uploadImageBanner($event:any){
+      let nameBanner = "banner.png";
+      this.imageService.uploadImage($event, nameBanner)
+    }
    
 }
