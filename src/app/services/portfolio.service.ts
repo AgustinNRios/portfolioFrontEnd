@@ -16,8 +16,8 @@ export class PortfolioService{
   constructor(private http:HttpClient,private router: Router,){ }
 
   public isLog: boolean= false;
-  //url: string= environment.apiURL
-  url: string= "http://localhost:8080/"//url local
+  url: string= environment.apiURL
+  //url: string= "http://localhost:8080/"//url local
 
   isLoged(): boolean
   {
